@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Opener</title>
+</head>
+<body>
+    <h1>Open Multiple URLs</h1>
+    <form method="POST">
+        <textarea name="urls" rows="10" cols="50" placeholder="Enter URLs, one per line"></textarea><br>
+        <input type="submit" value="Open URLs">
+    </form>
+
+    {% if enumerated_urls %}
+    <h2>Enumerated URLs</h2>
+    <ul>
+        {% for num, url in enumerated_urls %}
+        <li>{{ num }}: {{ url }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
